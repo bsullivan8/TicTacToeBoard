@@ -33,6 +33,7 @@ Piece TicTacToeBoard::toggleTurn()
 **/ 
 Piece TicTacToeBoard::placePiece(int row, int column)
 {
+bool hasEmpty =false;
 if(row > BOARDSIZE || column > BOARDSIZE)
   return Invalid;
 else 
@@ -41,6 +42,16 @@ else
 		for(int j=0; j<BOARDSIZE;j++)
 			if(board[i][j] == Blank)
 				break;
+		for(int j=0; j<BOARDSIZE;j++)
+		{
+			if(board[i][j] == Blank)
+			{
+				hasEmpty = true;
+				break;
+			}
+		}
+	if(hasEmpty == false)
+		return Invalid;
 	if(board[row][column] == Blank)
 	{
 		board[row][column]=turn;

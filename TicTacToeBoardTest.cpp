@@ -6,6 +6,7 @@
 #include "TicTacToeBoard.h"
 #include <string.h>
 //TESTING PLACE PIECE FUNCTIONALITY///
+ 
 class TicTacToeBoardTest : public ::testing::Test
 {
 	protected:
@@ -19,6 +20,8 @@ class TicTacToeBoardTest : public ::testing::Test
 Bug: Places a piece (X,O) on the board determined by the variable BOARDSIZE and changes turn so the other player
 	can place their piece. If you Place a piece Exactly Equal to BOARDSIZE the program seg faults.
 */
+=======
+//Checks whether the Colum is within the bounds of the Board//////////////////
 TEST(TicTacToeBoardTest, Invalid_Col)
 {
 	char x;
@@ -26,6 +29,7 @@ TEST(TicTacToeBoardTest, Invalid_Col)
 	x = test.placePiece(0,BOARDSIZE);
 	ASSERT_EQ(x,Invalid);
 }
+//Checks whether the Row is within the bounds of the Board//////////////////
 TEST(TicTacToeBoardTest, Invalid_Row)
 {
 	char x;
@@ -47,6 +51,7 @@ TEST(TicTacToeBoardTest, valid_Row)
 	x = test.placePiece(BOARDSIZE-1,0);
 	ASSERT_NE(x,Blank);
 }
+//As function improved this test should fail/////////////////////////
 TEST(TicTacToeBoardTest, Check_Blank)
 {
 	char x;
@@ -54,6 +59,7 @@ TEST(TicTacToeBoardTest, Check_Blank)
 	x = test.placePiece(0,0);
 	ASSERT_EQ(x,Blank);
 }
+//This Tests if a piece can be placed on top of another piece////////////////
 TEST(TicTacToeBoardTest, Place_Piece_Nonempty)
 {
 	char x;
@@ -63,6 +69,7 @@ TEST(TicTacToeBoardTest, Place_Piece_Nonempty)
 	x = test.placePiece(0,0);
 	ASSERT_EQ(x,y);
 }
+//This Tests if the game has been played to completion all spaces being filled//////////////////
 TEST(TicTacToeBoardTest, Check_Board_Filled)
 {
 	char x;
