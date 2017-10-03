@@ -1,10 +1,8 @@
 sudo: required
 
 before_install: 
--sudo apt-get install libgtest-dev
--sudo apt-get install cmake
--cd /usr/src/gtest
--sudo cmake Cmakelists.txt
+- sudo apt-get install libgtest-dev
+- sudo apt-get install cmake
 
 
 language: cpp
