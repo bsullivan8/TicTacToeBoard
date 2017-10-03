@@ -1,10 +1,10 @@
 sudo: required
 
-before_install: sudo apt-get install libgtest-dev
+before_install:
+-sudo apt-get install libgtest-dev
 
 language: cpp
 
-compiler:
-- gcc
+compiler: gcc
 
 script: make
