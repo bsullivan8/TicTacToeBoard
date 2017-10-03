@@ -20,7 +20,6 @@ class TicTacToeBoardTest : public ::testing::Test
 Bug: Places a piece (X,O) on the board determined by the variable BOARDSIZE and changes turn so the other player
 	can place their piece. If you Place a piece Exactly Equal to BOARDSIZE the program seg faults.
 */
-=======
 //Checks whether the Colum is within the bounds of the Board//////////////////
 TEST(TicTacToeBoardTest, Invalid_Col)
 {
