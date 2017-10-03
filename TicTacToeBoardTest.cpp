@@ -56,7 +56,7 @@ TEST(TicTacToeBoardTest, Check_Blank)
 	char x;
 	TicTacToeBoard test;
 	x = test.placePiece(0,0);
-	ASSERT_EQ(x,Blank);
+	ASSERT_NE(x,Blank);
 }
 //This Tests if a piece can be placed on top of another piece////////////////
 TEST(TicTacToeBoardTest, Place_Piece_Nonempty)
