@@ -82,6 +82,36 @@ TEST(TicTacToeBoardTest, Check_Board_Filled)
 		}
 	}
 }
+TEST(TicTacToeBoardTest, Check_Board_Filled_getwin)
+{
+	char x;
+	TicTacToeBoard test;
+	for(int i = 0; i<BOARDSIZE; i++)
+	{
+		for(int j = 0; j<BOARDSIZE; j++)
+		{
+			test.placePiece(i,j);
+		}
+	}
+	x = test.getWinner();
+	ASSERT_EQ(x,X);
+}
+TEST(TicTacToeBoardTest, row1_getwin)
+{
+	char x;
+	TicTacToeBoard test;
+	test.placePiece(0,0);
+	test.placePiece(1,0);
+	test.placePiece(0,1);
+	test.placePiece(2,1);
+	test.placePiece(0,2);
+	test.placePiece(2,2);
+	test.placePiece(2,0);
+	test.placePiece(1,2);
+	test.placePiece(1,1);
+	x = test.getWinner();
+	ASSERT_EQ(x,X);
+}
 /* EXAMPLE TEST FORMAT
 TEST(TicTacToeBoardTest, sanityCheck)
 {
